@@ -1,6 +1,6 @@
 package models;
 
-public class Person implements Comparable<Person>, Payable {
+public class Person implements Comparable<Person>, Payable{
     private int id;
     private static int id_gen = 1;
     private String name;
