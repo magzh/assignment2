@@ -1,7 +1,8 @@
 package models;
 
-public class Person implements Comparable<Person> {
+public class Person implements Comparable<Person>, Payable {
     private int id;
+    private static int id_gen = 1;
     private String name;
     private String surname;
 
@@ -25,16 +26,25 @@ public class Person implements Comparable<Person> {
         this.surname = surname;
     }
     public Person(){
-        setName("DefaultName");
-        setSurname("DefaultSurname");
+        id = id_gen++;
     }
     public Person(String name, String surname){
+        this();
         setName(name);
         setSurname(surname);
     }
 
     @Override
+    public double getPaymentAmount() {
+        return 0.0;
+    }
+
+    @Override
     public int compareTo(Person o) {
+        if (this.getPaymentAmount() > o.getPaymentAmount())
+            return 1;
+        else if (this.getPaymentAmount() < o.getPaymentAmount())
+            return -1;
         return 0;
     }
 

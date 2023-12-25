@@ -11,15 +11,17 @@ public class Student extends Person {
         this.gpa = gpa;
     }
     public Student(){
-        setName("DefaultName");
-        setSurname("DefaultSurname");
-        setGpa(0.0);
+        super();
     }
 
     public Student(String name, String surname, double gpa){
-        setName(name);
-        setSurname(surname);
+        super(name, surname);
         setGpa(gpa);
+    }
+
+    @Override
+    public double getPaymentAmount() {
+        return getGpa() > 2.67 ? 36660.0 : 0.0;
     }
 
     @Override

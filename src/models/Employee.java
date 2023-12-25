@@ -20,22 +20,18 @@ public class Employee extends Person{
         this.salary = salary;
     }
     public Employee(){
-        setName("DefaultName");
-        setSurname("DefaultSurname");
-        setPosition("DefaultPosition");
-        setSalary(0.0);
+        super();
     }
 
     public Employee(String name, String surname, String position, double salary){
-        setName(name);
-        setSurname(surname);
+        super(name, surname);
         setPosition(position);
         setSalary(salary);
     }
 
     @Override
-    public int compareTo(Person o) {
-        return super.compareTo(o);
+    public double getPaymentAmount() {
+        return getSalary();
     }
 
     @Override
