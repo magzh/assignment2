@@ -50,6 +50,6 @@ public class Person implements Comparable<Person>, Payable{
 
     @Override
     public String toString() {
-        return id + ". " + name + '\'' + " " + surname;
+        return id + ". " + name + " " + surname;
     }
 }
