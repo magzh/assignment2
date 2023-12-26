@@ -23,23 +23,40 @@ public class Main {
     }
 
     public static ArrayList<Person> loadStudents() throws FileNotFoundException {
-        File file = new File("C:\\Users\\magzh\\IdeaProjects\\assignment2\\src\\source\\students");
-        Scanner scanner = new Scanner(file);
-        ArrayList<Person> students = new ArrayList<>();
-        while (scanner.hasNextLine()){
-            students.add(new Student(scanner.next(), scanner.next(), scanner.nextDouble()));
-        }
-        return students;
+        return loadPerson(1);
     }
 
     public static ArrayList<Person> loadEmployees() throws FileNotFoundException {
-        File file = new File("C:\\Users\\magzh\\IdeaProjects\\assignment2\\src\\source\\employees");
-        Scanner scanner = new Scanner(file);
-        ArrayList<Person> employees = new ArrayList<>();
-        while (scanner.hasNextLine()){
-            employees.add(new Employee(scanner.next(), scanner.next(), scanner.next(), scanner.nextDouble()));
+        return loadPerson(2);
+    }
+
+    public static ArrayList<Person> loadPerson(int type) throws FileNotFoundException{
+        String path = "C:\\Users\\magzh\\IdeaProjects\\assignment2\\src\\source\\";
+        switch (type){
+            case 1:
+                path += "students";
+                break;
+            case 2:
+                path += "employees";
+                break;
         }
-        return employees;
+        File file = new File(path);
+        Scanner scanner = new Scanner(file);
+        ArrayList<Person> people = new ArrayList<>();
+        switch (type){
+            case 1:
+                while (scanner.hasNextLine()){
+                    people.add(new Employee(scanner.next(), scanner.next(), scanner.next(), scanner.nextDouble()));
+                }
+                break;
+            case 2:
+                while (scanner.hasNextLine()){
+                    people.add(new Student(scanner.next(), scanner.next(), scanner.nextDouble()));
+                }
+                break;
+        }
+
+        return people;
     }
 
     public static void printData(Iterable<Person> people){
