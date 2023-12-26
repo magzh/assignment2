@@ -20,20 +20,25 @@ public class Main {
     }
 
     public static ArrayList<Person> loadStudents() throws FileNotFoundException {
-        return loadPerson(1);
+        return loadPerson(Type.STUDENT);
     }
 
     public static ArrayList<Person> loadEmployees() throws FileNotFoundException {
-        return loadPerson(2);
+        return loadPerson(Type.EMPLOYEE);
     }
 
-    public static ArrayList<Person> loadPerson(int type) throws FileNotFoundException{
+    enum Type{
+        STUDENT,
+        EMPLOYEE
+    }
+
+    public static ArrayList<Person> loadPerson(Type type) throws FileNotFoundException{
         String path = "C:\\Users\\magzh\\IdeaProjects\\assignment2\\src\\source\\";
         switch (type){
-            case 1:
+            case STUDENT:
                 path += "students";
                 break;
-            case 2:
+            case EMPLOYEE:
                 path += "employees";
                 break;
         }
@@ -41,12 +46,12 @@ public class Main {
         Scanner scanner = new Scanner(file);
         ArrayList<Person> people = new ArrayList<>();
         switch (type){
-            case 1:
+            case STUDENT:
                 while (scanner.hasNextLine()){
                     people.add(new Student(scanner.next(), scanner.next(), scanner.nextDouble()));
                 }
                 break;
-            case 2:
+            case EMPLOYEE:
                 while (scanner.hasNextLine()){
                     people.add(new Employee(scanner.next(), scanner.next(), scanner.next(), scanner.nextDouble()));
                 }
