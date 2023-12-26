@@ -20,7 +20,6 @@ public class Employee extends Person{
         this.salary = salary;
     }
     public Employee(){
-        super();
     }
 
     public Employee(String name, String surname, String position, double salary){

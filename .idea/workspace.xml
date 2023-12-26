@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f2cbd9c-1293-4398-b797-a55f6231c7d4" name="Changes" comment="Added more Students/Employees to the example ArrayList">
+    <list default="true" id="5f2cbd9c-1293-4398-b797-a55f6231c7d4" name="Changes" comment="Reworked toString implementations for all classes to be more concise and remove repetitions">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/source/employees" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/source/students" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Payable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/Payable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Person.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Student.java" afterDir="false" />
     </list>
@@ -40,6 +45,7 @@
     "Application.Main.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
@@ -54,6 +60,12 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\magzh\IdeaProjects\assignment2\src\source" />
+      <recent name="C:\Users\magzh\IdeaProjects\assignment2\src" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -73,7 +85,7 @@
       <option name="presentableId" value="Default" />
       <updated>1703480904594</updated>
       <workItem from="1703480905736" duration="2483000" />
-      <workItem from="1703517557283" duration="9947000" />
+      <workItem from="1703517557283" duration="12674000" />
     </task>
     <task id="LOCAL-00001" summary="Initial">
       <option name="closed" value="true" />
@@ -123,7 +135,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703559887883</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Reworked toString implementations for all classes to be more concise and remove repetitions">
+      <option name="closed" value="true" />
+      <created>1703561906657</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1703561906657</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -146,6 +166,7 @@
     <MESSAGE value="Version 1.1" />
     <MESSAGE value="Version 1.2" />
     <MESSAGE value="Added more Students/Employees to the example ArrayList" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added more Students/Employees to the example ArrayList" />
+    <MESSAGE value="Reworked toString implementations for all classes to be more concise and remove repetitions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reworked toString implementations for all classes to be more concise and remove repetitions" />
   </component>
 </project>

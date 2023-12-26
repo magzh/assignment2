@@ -2,23 +2,44 @@ import models.Employee;
 import models.Person;
 import models.Student;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
-        System.out.println("Hello world!");
+    public static void main(String[] args) throws FileNotFoundException {
         ArrayList<Person> people = new ArrayList<>();
-        people.add(new Student("Curtis","Joseph",2.68));
-        people.add(new Employee("Pavel","Datsyuk","Centre",45000.0));
-        people.add(new Student("Manny","Legace",2.67));
-        people.add(new Employee("Brett","Hull","Right Wing",25000.0));
-        people.add(new Employee("Brendan","Shanahan","Left Wing",36000.0));
-        people.add(new Employee("Mathieu","Schneider","Defender",36670.0));
-        people.add(new Student("Dominik","Hasek",4.00));
-        people.add(new Employee("Nicklas","Lidstorm","Defender",41000.0));
+
+        ArrayList<Person> students = loadStudents();
+        ArrayList<Person> employees = loadEmployees();
+
+        people.addAll(students);
+        people.addAll(employees);
+
         Collections.sort(people);
         printData(people);
+    }
+
+    public static ArrayList<Person> loadStudents() throws FileNotFoundException {
+        File file = new File("C:\\Users\\magzh\\IdeaProjects\\assignment2\\src\\source\\students");
+        Scanner scanner = new Scanner(file);
+        ArrayList<Person> students = new ArrayList<>();
+        while (scanner.hasNextLine()){
+            students.add(new Student(scanner.next(), scanner.next(), scanner.nextDouble()));
+        }
+        return students;
+    }
+
+    public static ArrayList<Person> loadEmployees() throws FileNotFoundException {
+        File file = new File("C:\\Users\\magzh\\IdeaProjects\\assignment2\\src\\source\\employees");
+        Scanner scanner = new Scanner(file);
+        ArrayList<Person> employees = new ArrayList<>();
+        while (scanner.hasNextLine()){
+            employees.add(new Employee(scanner.next(), scanner.next(), scanner.next(), scanner.nextDouble()));
+        }
+        return employees;
     }
 
     public static void printData(Iterable<Person> people){

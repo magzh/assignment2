@@ -1,6 +1,8 @@
 package models;
 
-public class Person implements Comparable<Person>, Payable{
+import interfaces.Payable;
+
+public abstract class Person implements Comparable<Person>, Payable {
     private int id;
     private static int id_gen = 1;
     private String name;
@@ -25,18 +27,15 @@ public class Person implements Comparable<Person>, Payable{
     public void setSurname(String surname) {
         this.surname = surname;
     }
+
     public Person(){
         id = id_gen++;
     }
+
     public Person(String name, String surname){
         this();
         setName(name);
         setSurname(surname);
-    }
-
-    @Override
-    public double getPaymentAmount() {
-        return 0.0;
     }
 
     @Override
@@ -45,6 +44,7 @@ public class Person implements Comparable<Person>, Payable{
             return 1;
         else if (this.getPaymentAmount() < o.getPaymentAmount())
             return -1;
+
         return 0;
     }
 
