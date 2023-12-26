@@ -11,8 +11,12 @@ public class Main {
         ArrayList<Person> people = new ArrayList<>();
         people.add(new Student("Curtis","Joseph",2.68));
         people.add(new Employee("Pavel","Datsyuk","Centre",45000.0));
-        people.add(new Student("Manny","Legace",2.66));
+        people.add(new Student("Manny","Legace",2.67));
         people.add(new Employee("Brett","Hull","Right Wing",25000.0));
+        people.add(new Employee("Brendan","Shanahan","Left Wing",36000.0));
+        people.add(new Employee("Mathieu","Schneider","Defender",36670.0));
+        people.add(new Student("Dominik","Hasek",4.00));
+        people.add(new Employee("Nicklas","Lidstorm","Defender",41000.0));
         Collections.sort(people);
         printData(people);
     }
