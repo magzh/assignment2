@@ -12,11 +12,8 @@ public class Main {
     public static void main(String[] args) throws FileNotFoundException {
         ArrayList<Person> people = new ArrayList<>();
 
-        ArrayList<Person> students = loadStudents();
-        ArrayList<Person> employees = loadEmployees();
-
-        people.addAll(students);
-        people.addAll(employees);
+        people.addAll(loadStudents());
+        people.addAll(loadEmployees());
 
         Collections.sort(people);
         printData(people);
@@ -46,12 +43,12 @@ public class Main {
         switch (type){
             case 1:
                 while (scanner.hasNextLine()){
-                    people.add(new Employee(scanner.next(), scanner.next(), scanner.next(), scanner.nextDouble()));
+                    people.add(new Student(scanner.next(), scanner.next(), scanner.nextDouble()));
                 }
                 break;
             case 2:
                 while (scanner.hasNextLine()){
-                    people.add(new Student(scanner.next(), scanner.next(), scanner.nextDouble()));
+                    people.add(new Employee(scanner.next(), scanner.next(), scanner.next(), scanner.nextDouble()));
                 }
                 break;
         }
